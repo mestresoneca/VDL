@@ -516,7 +516,8 @@
         } else if (c.key === "diff"){
           td.classList.add("num");
           var n = Number(val);
-          if (!isNaN(n)) td.classList.add(n > 0 ? "diff-pos" : (n < 0 ? "diff-neg" : ""));
+          if (!isNaN(n) && n > 0) td.classList.add("diff-pos");
+          if (!isNaN(n) && n < 0) td.classList.add("diff-neg");
           td.textContent = (val === null || val === undefined || val === "") ? "—" : (n > 0 ? "+" + n : String(n));
         } else {
           td.classList.add("num");
